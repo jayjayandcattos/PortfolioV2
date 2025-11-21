@@ -23,7 +23,7 @@ function LoadingScreen({ isLoading }) {
   return (
     <div className="fixed inset-0 z-[9999] bg-bg-dark flex items-center justify-center">
       <div className="flex flex-col items-center gap-8">
-        {/* Crown Icon with Animation */}
+      
         <div className="relative">
           <svg
             className="w-20 h-20 md:w-24 md:h-24 animate-spin-slow"

@@ -20,16 +20,20 @@
 
 /* Canvas Background - Constellations */
 .canvas-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
   z-index: 0;
   opacity: 1;
   pointer-events: none;
   will-change: transform;
   background: transparent;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  margin: 0;
+  padding: 0;
 }
 
 /* Abstract Shapes */
@@ -216,14 +220,194 @@
   }
 }
 
-/* Navigation */
-.nav {
+/* Hamburger Menu - Universal Compatibility */
+.hamburger-menu {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  width: 3rem;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.hamburger-menu:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.hamburger-menu:active {
+  transform: scale(0.95);
+}
+
+.hamburger-line {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+@media (min-width: 768px) {
+  .hamburger-menu {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  .hamburger-line {
+    width: 1.5rem;
+  }
+}
+
+/* Menu Overlay - Universal Compatibility */
+.menu-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-overlay.opacity-100 {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menu-content {
+  text-align: center;
+  width: 100%;
+  max-width: 64rem;
+  padding: 2rem 1rem;
+}
+
+.menu-link {
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+  padding: 0.75rem 1rem;
   transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  transform: translateX(10px);
+  color: #6366f1;
+  outline: none;
+}
+
+.menu-link:active {
+  transform: translateX(10px) scale(0.98);
+}
+
+.menu-number {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.menu-link:hover .menu-number,
+.menu-link:focus .menu-number {
+  color: #6366f1;
+}
+
+.menu-text {
+  position: relative;
+  flex: 1;
+}
+
+.menu-social {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.menu-social a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  padding: 0.5rem;
+}
+
+.menu-social a:hover,
+.menu-social a:focus {
+  color: #6366f1;
+  transform: scale(1.1);
+  outline: none;
+}
+
+@media (min-width: 640px) {
+  .menu-social {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .menu-social a {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-content {
+    padding: 3rem 1.5rem;
+  }
+  
+  .menu-links {
+    gap: 1.5rem;
+  }
+  
+  .menu-link {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-links {
+    gap: 2rem;
+  }
 }
 
 .nav-links-desktop {
@@ -271,10 +455,11 @@
 
 .logo-main {
   display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.1rem;
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
 }
 
 .logo-sub {
@@ -287,8 +472,8 @@
 }
 
 .menu-toggle {
-  width: 30px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   position: relative;
   background: none;
   border: none;
@@ -297,33 +482,37 @@
   display: flex !important;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 6px;
   visibility: visible !important;
   opacity: 1 !important;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.menu-toggle span {
+.menu-line {
   display: block !important;
   height: 2px;
-  width: 100%;
+  width: 24px;
   background: #ffffff !important;
   transition: all 0.3s ease;
   transform-origin: center;
   opacity: 1 !important;
   visibility: visible !important;
+  border-radius: 2px;
 }
 
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translateY(10px);
+.menu-toggle.active .menu-line:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
 }
 
-.menu-toggle.active span:nth-child(2) {
+.menu-toggle.active .menu-line:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-10px);
+.menu-toggle.active .menu-line:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
 }
 
 /* Menu Overlay */
@@ -340,9 +529,11 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.menu-overlay.open {
+.menu-overlay.opacity-100 {
   opacity: 1;
   visibility: visible;
 }
@@ -354,11 +545,26 @@
 .menu-link {
   position: relative;
   overflow: visible;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.menu-link:hover {
+.menu-link:hover,
+.menu-link:focus {
   transform: translateX(20px);
   color: #6366f1;
+  outline: none;
+}
+
+.menu-link:active {
+  transform: translateX(20px) scale(0.98);
 }
 
 .menu-link.active {
@@ -393,35 +599,6 @@
 }
 
 /* Parallax Effects */
-.parallax-section {
-  will-change: transform;
-}
-
-.parallax-bg,
-.parallax-md,
-.parallax-fg,
-.parallax-rotate {
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.parallax-bg {
-  transform-origin: center center;
-}
-
-.parallax-md {
-  transform-origin: center center;
-}
-
-.parallax-fg {
-  transform-origin: center center;
-}
-
-.parallax-rotate {
-  transform-origin: center center;
-}
 
 /* Hero Section - Redesigned */
 .hero {
@@ -429,9 +606,31 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 8rem 4rem 4rem;
+  justify-content: center;
+  padding: 2rem 1rem;
   z-index: 2;
   will-change: transform;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1280px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.hero-heading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .milim-container {
@@ -484,17 +683,89 @@
   font-size: 8rem;
   font-weight: 200;
   line-height: 0.9;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
   letter-spacing: -0.05em;
+  text-align: center !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box !important;
 }
 
 .name-line {
-  display: block;
-  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+  display: block !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  position: relative;
+}
+
+/* RGB Keyboard Effect - Gaming Style */
+.rgb-keyboard-text {
+  background: linear-gradient(
+    90deg,
+    #ff0080 0%,
+    #ff0040 12.5%,
+    #ff0000 25%,
+    #ff4000 37.5%,
+    #ff8000 50%,
+    #ffff00 62.5%,
+    #80ff00 75%,
+    #00ff00 87.5%,
+    #00ff80 100%
+  );
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: fadeInUp 0.8s ease backwards;
+  animation: rgbWave 2s linear infinite, fadeInUp 0.8s ease backwards;
+  filter: drop-shadow(0 0 15px rgba(255, 0, 128, 0.8)) 
+          drop-shadow(0 0 25px rgba(0, 255, 0, 0.6)) 
+          drop-shadow(0 0 35px rgba(0, 128, 255, 0.6));
+  position: relative;
+}
+
+.rgb-keyboard-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    #ff0080 0%,
+    #ff0040 12.5%,
+    #ff0000 25%,
+    #ff4000 37.5%,
+    #ff8000 50%,
+    #ffff00 62.5%,
+    #80ff00 75%,
+    #00ff00 87.5%,
+    #00ff80 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rgbWave 2s linear infinite;
+  filter: blur(10px);
+  opacity: 0.7;
+}
+
+@keyframes rgbWave {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 300% center;
+  }
 }
 
 .name-line:nth-child(1) { animation-delay: 0.1s; }
@@ -1061,6 +1332,22 @@
 @media (max-width: 768px) {
   .hero-name {
     font-size: 3rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  .hero-heading {
+    padding: 0 1rem;
+  }
+
+  .hero-badge {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badge span:last-child {
+    font-size: 0.65rem;
+    white-space: normal;
+    text-align: center;
   }
 
   .hero-roles {
@@ -1074,4 +1361,28 @@
   .stats {
     grid-template-columns: 1fr;
   }
+
+  .logo-main {
+    font-size: 1.25rem;
+  }
+
+  .nav {
+    min-height: 55px;
+    max-height: 60px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .tech-icons-vertical {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tech-icon-item {
+    width: 100%;
+  }
+
+  .name-line {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
 }
+

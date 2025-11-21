@@ -49,6 +49,11 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: 0;
+}
+
+html, body {
+  scroll-snap-type: none;
 }
 
 * {
@@ -433,7 +438,7 @@ body {
   }
 }
 
-.hero-name {
+/* .hero-name {
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 800;
@@ -441,6 +446,8 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .name-line {
@@ -450,7 +457,9 @@ body {
   background-clip: text;
   background-size: 200% auto;
   animation: shimmer 3s linear infinite;
-}
+  text-align: center;
+  width: 100%;
+} */
 
 @keyframes shimmer {
   0% {
@@ -1198,7 +1207,7 @@ body {
     gap: 3rem;
   }
   
-  .hero-name {
+  /* .hero-name {
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
   
@@ -1242,7 +1251,7 @@ body {
   .section-number,
   .section-title {
     font-size: 2.5rem;
-  }
+  } */
   
   .section-title::after {
     width: 60px;
@@ -1367,7 +1376,7 @@ body {
     font-size: 1rem;
   }
   
-  .hero-name {
+  /* .hero-name {
     font-size: clamp(2rem, 12vw, 3rem);
   }
   
@@ -1413,8 +1422,7 @@ body {
   
   .section-subtitle {
     font-size: 1rem;
-    margin-bottom: 2rem;
-  }
+  } */
   
   .about {
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
@@ -1535,7 +1543,7 @@ body {
     font-size: 0.95rem;
   }
   
-  .hero-name {
+  /* .hero-name {
     font-size: 2rem;
   }
   
@@ -1567,7 +1575,7 @@ body {
   .skill-bar-item,
   .contact-item {
     border-radius: 15px;
-  }
+  } */
 }
 
 /* iPhone 6 Specific (375px) */
@@ -1604,7 +1612,7 @@ body {
     font-size: 0.9rem;
   }
 
-  .hero-name {
+  /* .hero-name {
     font-size: 2rem;
     line-height: 1.1;
   }
@@ -1636,7 +1644,7 @@ body {
   .hero-card {
     padding: 1.25rem;
     transform: rotate(0deg);
-  }
+  } */
 
   .card-label {
     font-size: 0.7rem;

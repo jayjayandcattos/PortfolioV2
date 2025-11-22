@@ -10,35 +10,35 @@ function Work() {
     { 
       title: 'LabGuard', 
       desc: 'Laboratory RFID System', 
-      category: 'Full Stack', 
+      category: 'Web App', 
       logo: 'assets/labguard-logo.svg',
       link: 'https://github.com/jayjayandcattos/LabGuard'
     },
     { 
       title: 'NeuKai', 
       desc: 'Fashion Donation Platform', 
-      category: 'Frontend', 
+      category: 'Web App', 
       logo: 'assets/neukai-logo.svg',
       link: 'https://github.com/jayjayandcattos/NeuKai'
     },
     { 
       title: 'TenantSphere', 
       desc: 'Standalone Apartment Management System', 
-      category: 'Full Stack', 
+      category: 'Web App', 
       logo: 'assets/tenantsphere-logo.svg',
       link: 'https://github.com/jayjayandcattos/ApartmentManagementSystem'
     },
     { 
       title: 'Evergreen', 
       desc: 'Banking Supersystem', 
-      category: 'Backend', 
+      category: 'Web App', 
       logo: 'assets/evergreen-logo.svg',
       link: 'https://github.com/jayjayandcattos/Evergreen'
     },
     { 
       title: 'PinoyDemons', 
       desc: 'Zentry Clone Website', 
-      category: 'Full Stack', 
+      category: 'Web App', 
       logo: 'assets/pinoydemonyos-logo.svg',
       link: 'https://github.com/jayjayandcattos/Zentry-Demonyos'
     }

@@ -42,12 +42,12 @@ function Contact() {
       <div className="relative z-10 max-w-4xl mx-auto text-center w-full">
         <div className="mb-12 md:mb-16 lg:mb-24">
           <div className="inline-block px-4 py-2 mb-6 bg-black/10 dark:bg-white/10 border border-black/30 dark:border-white/30 rounded-full">
-            <span className="text-xs md:text-sm text-black dark:text-white font-semibold uppercase tracking-wider">Get In Touch</span>
+            <span className="text-[10px] xs:text-xs sm:text-sm md:text-base text-black dark:text-white font-semibold uppercase tracking-wider">Get In Touch</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black dark:text-white mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-black dark:text-white mb-4 sm:mb-5 md:mb-6">
             <span>Let's Connect</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-4">
             Have a project in mind or just want to chat? I'd love to hear from you!
           </p>
         </div>
@@ -66,8 +66,8 @@ function Contact() {
                 <div className="mb-3 md:mb-4 text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300 flex justify-center">
                   {contact.icon}
                 </div>
-                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2 md:mb-3 font-semibold">{contact.label}</div>
-                <div className="text-sm sm:text-base md:text-lg font-bold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300 break-all">
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 uppercase tracking-wider mb-2 sm:mb-2 md:mb-3 font-semibold">{contact.label}</div>
+                <div className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300 break-all">
                   {contact.value} ↗
                 </div>
               </div>

@@ -79,14 +79,6 @@ html {
   scroll-padding-top: 0;
 }
 
-html, body {
-  scroll-snap-type: none;
-}
-
-* {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   min-width: 320px;

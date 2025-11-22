@@ -5,7 +5,7 @@ function Skills() {
     { title: 'Web Design', desc: 'My friends have helped me develop my design talents, and I will always be appreciative of their support as I continue to learn and work toward being a professional in this field.', icon: '🎨' },
     { title: 'Web Development', desc: 'A modest web developer, I strive to improve with each project, enhancing my skills and knowledge in the ever-changing field of web development.', icon: '💻' },
     { title: 'Filmmaking', desc: "I've been passionate about media since childhood and got involved in senior high school. My most recent project was entered into a film festival during my first year of college.", icon: '🎬' },
-    { title: 'Graphic Design', desc: 'I am proficient in Capcut, Sony Vegas, and Canva. Feel free to reach out if you\'re interested in learning about the presets I use in Canva, my render settings for Vegas, or how I create edits in Capcut!', icon: '✨' }
+    { title: 'Graphic Design', desc: 'I am proficient in Capcut, Sony Vegas, and Canva. Feel free to reach out if you\'re interested in learning about the presets I use in Canva, my render settings for Vegas, or how I create edits in Capcut!', icon: '🎨' }
   ]
 
   const techStacks = [
@@ -29,9 +29,9 @@ function Skills() {
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="text-center mb-12 md:mb-16 lg:mb-24">
           <div className="inline-block px-4 py-2 mb-6 bg-black/10 dark:bg-white/10 border border-black/30 dark:border-white/30 rounded-full">
-            <span className="text-xs md:text-sm text-black dark:text-white font-semibold uppercase tracking-wider">My Expertise</span>
+            <span className="text-[10px] xs:text-xs sm:text-sm md:text-base text-black dark:text-white font-semibold uppercase tracking-wider">My Expertise</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black dark:text-white mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-black dark:text-white mb-4 sm:mb-5 md:mb-6">
             <span>Skills & Tech</span>
           </h2>
         </div>
@@ -55,8 +55,8 @@ function Skills() {
 
           <div>
             <div className="mb-6 md:mb-8">
-              <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-black dark:text-white mb-2">Tech Stacks</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Technologies I work with</p>
+              <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black dark:text-white mb-2">Tech Stacks</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base">Technologies I work with</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-3 md:gap-4">
               {techStacks.map((tech, index) => (

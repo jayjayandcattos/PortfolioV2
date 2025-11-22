@@ -16,16 +16,16 @@ function Hero({ scrollToSection }) {
       
       <div className="relative z-10 w-full max-w-7xl mx-auto text-center flex flex-col items-center justify-center -translate-y-10">
         <div className="mb-6 md:mb-10 w-full flex flex-col items-center justify-center">
-          <div className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 font-light uppercase tracking-[0.3em] mb-4 md:mb-6 text-center">
+          <div className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 font-light uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6 text-center">
             Hey, I am
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black leading-[0.9] mb-6 md:mb-8 text-black dark:text-white">
+          <h1 className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black leading-[0.9] mb-4 sm:mb-6 md:mb-8 text-black dark:text-white">
             <span className="block">Justin</span>
             <span className="block">Christopher</span>
             <span className="block">S. Rivera</span>
           </h1>
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-light mb-8 md:mb-12 text-center">
-            But you can call me <span className="font-display font-bold text-gray-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl">jayzee</span>
+          <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-gray-700 dark:text-gray-300 font-light mb-6 sm:mb-8 md:mb-12 text-center px-4">
+            But you can call me <span className="font-display font-bold text-gray-900 dark:text-white text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">jayzeeeee</span>
           </div>
         </div>
             
@@ -37,8 +37,7 @@ function Hero({ scrollToSection }) {
             >
               <div className="absolute inset-0 bg-black/0 dark:bg-white/0 group-hover:bg-black/5 dark:group-hover:bg-white/10 rounded-2xl transition-all duration-500"></div>
               <div className="relative z-10">
-                <div className="text-2xl md:text-3xl mb-2">✨</div>
-                <div className="text-sm md:text-base font-semibold text-black dark:text-white">{role}</div>
+                <div className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-black dark:text-white">{role}</div>
               </div>
             </div>
           ))}
@@ -64,14 +63,6 @@ function Hero({ scrollToSection }) {
             </span>
           </button>
         </div>
-      </div>
-      
-      <div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow z-20 cursor-pointer transition-opacity duration-300 hover:opacity-80"
-        onClick={() => scrollToSection('about')}
-      >
-        <span className="text-gray-500 dark:text-gray-400 text-xs uppercase tracking-wider">Scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-black dark:from-white to-transparent"></div>
       </div>
     </section>
   )

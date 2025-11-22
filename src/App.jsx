@@ -32,36 +32,37 @@ function App() {
     document.documentElement.classList.toggle('dark', theme === 'dark')
   }, [theme])
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id, fromMenu = false) => {
     const element = document.getElementById(id)
     if (element) {
-      const startPosition = window.pageYOffset
-      const targetPosition = element.offsetTop
-      const distance = targetPosition - startPosition
-      const duration = 1200
-      let start = null
+      if (fromMenu) {
+        // Close menu first, then scroll after animation completes
+        setMenuOpen(false)
+        setTimeout(() => {
+          const headerOffset = 0
+          const elementPosition = element.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
-      function easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
-      }
-
-      function animation(currentTime) {
-        if (start === null) start = currentTime
-        const timeElapsed = currentTime - start
-        const progress = Math.min(timeElapsed / duration, 1)
-        const ease = easeInOutCubic(progress)
-        
-        window.scrollTo(0, startPosition + distance * ease)
-        
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation)
-        } else {
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          })
+          
           setActiveSection(id)
-        }
-      }
+        }, 300) // Wait for menu close animation (500ms duration, but 300ms is enough)
+      } else {
+        // Direct scroll without menu delay
+        const headerOffset = 0
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
-      requestAnimationFrame(animation)
-      setMenuOpen(false)
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
+        
+        setActiveSection(id)
+      }
     }
   }
 

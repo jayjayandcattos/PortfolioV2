@@ -21,8 +21,7 @@ function MenuOverlay({ menuOpen, setMenuOpen, activeSection, scrollToSection, th
               onClick={(e) => { 
                 e.preventDefault(); 
                 e.stopPropagation();
-                scrollToSection(item.id);
-                setMenuOpen(false);
+                scrollToSection(item.id, true);
               }}
               className={`flex items-center gap-3 md:gap-4 text-black dark:text-white no-underline font-display text-xl sm:text-2xl md:text-3xl font-bold transition-all duration-300 p-2 md:p-3 relative overflow-hidden group bg-transparent border-none cursor-pointer ${activeSection === item.id ? 'text-black dark:text-white' : 'hover:text-gray-600 dark:hover:text-gray-400'}`}
             >

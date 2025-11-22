@@ -21,7 +21,7 @@ function LoadingScreen({ isLoading }) {
   if (!isLoading) return null
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-bg-dark flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] bg-white dark:bg-black flex items-center justify-center">
       <div className="flex flex-col items-center gap-8">
       
         <div className="relative">
@@ -31,40 +31,32 @@ function LoadingScreen({ isLoading }) {
             viewBox="0 0 24 24"
             fill="none"
           >
-            <defs>
-              <linearGradient id="crownGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#6366f1" />
-                <stop offset="50%" stopColor="#ec4899" />
-                <stop offset="100%" stopColor="#06b6d4" />
-              </linearGradient>
-            </defs>
             <path
               d="M12 2L9 8h6l-3-6zm-2 6l-3 4h10l-3-4H10zm-4 4l-2 6h16l-2-6H6zm2 6h8v2H8v-2z"
-              fill="url(#crownGradient)"
-              className="animate-pulse"
+              fill="currentColor"
+              className="text-black dark:text-white animate-pulse"
             />
           </svg>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-20 blur-xl animate-pulse"></div>
         </div>
 
         {/* Loading Text */}
         <div className="text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-2">
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-black dark:text-white mb-2">
             Loading Portfolio
           </h2>
-          <p className="text-white/50 text-sm md:text-base">Preparing something amazing...</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">Preparing something amazing...</p>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-64 md:w-80 h-1 bg-white/10 rounded-full overflow-hidden">
+        <div className="w-64 md:w-80 h-1 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full transition-all duration-300 ease-out"
+            className="h-full bg-black dark:bg-white rounded-full transition-all duration-300 ease-out"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
 
         {/* Progress Percentage */}
-        <p className="text-white/70 text-sm font-mono">{progress}%</p>
+        <p className="text-gray-700 dark:text-gray-300 text-sm font-mono">{progress}%</p>
       </div>
     </div>
   )
